@@ -1,11 +1,15 @@
-const { createUser } = require ('./service.js')
+const { createUser
+} = require('./service.js')
+const { randomUUID } = require('crypto')
 // testando uma função - testando o retorno dela
 describe ('Service', () => {
     it ('Deve retornar o usuário criado', () => {
-      expect(createUser({
+      const response = createUser({
         nome: 'João da Silvaaaa',
         email: 'alajs@dev.br'
-      })).toMatchObject({
+      })
+      expect(response).toMatchObject({
+        id: expect.any(String),
         nome: 'João da Silvaaaa',
         email: 'alajs@dev.br'
       })

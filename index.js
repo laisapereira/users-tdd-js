@@ -1,6 +1,6 @@
-import express from 'express'
+const express = require('express')
 
-import { createUser } from './service.js';
+const { createUser } = require ('./service.js')
 
 const app = express()
 
